@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Savegame Editor &ndash; Mario Kart 7</title>
+	<meta http-equiv="content-Type" content="text/html; charset=UTF-8"/>
+	<meta name="description" content="一个马力欧卡丁车7修改器 。简单点击修改赛车部件等"/>
+	<meta name="keywords" content="html5, savegame, 存档, 修改器, hack, 马里奥, 3ds, 马力欧, 卡丁车, 7, 金币, 解锁, tracks, karts, 车, 部件, 轮胎, 滑翔翼"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+	<link rel="shortcut icon" href="favicon.png"/>
+	<link type="text/css" rel="stylesheet" href="../savegame-editor.css" media="all"/>
+	<script type="text/javascript" src="../savegame-editor.js"></script>
+	<script type="text/javascript" src="./mario-kart-7.js"></script>
+	<script type="text/javascript"><!--
+		/* service worker */
+		var FORCE_HTTPS=true;
+		window.addEventListener('load',function(){
+			if(location.protocol==='http:' && FORCE_HTTPS)
+				location.replace(window.location.href.replace('http:','https:'));
+			else if(location.protocol==='https:' && 'serviceWorker' in navigator)
+				navigator.serviceWorker.register('/savegame-editors/mario-kart-7/_cache_service_worker.js', {scope: '/savegame-editors/mario-kart-7/'});
+		}, false);
+	--></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="header">
+	<div id="header-top">
+		<div class="row wrapper">
+			<h1 class="six columns text-left"><img src="favicon.png" /> 存档修改器 <small>马力欧卡丁车7</small></h1>
+			<div class="six columns header-buttons text-right">
+				汉化 <a href="/">Counta</a>
+				<i class="icon github"></i> <a href="https://github.com/marcrobledo/savegame-editors/tree/master/mario-kart-7" target="_blank">GitHub</a>
+			</div>
+		</div>
+		<div class="hidden row wrapper" id="toolbar">
+			<div class="twelve columns text-center">
+				<button class="close" onclick="closeFile()"><i class="icon close"></i> 关闭文件</button>
+				<button class="colored" onclick="saveChanges()"><i class="icon accept"></i> 保存更改</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- THE EDITOR -->
+<div id="the-editor" class="wrapper hidden">
+	<!-- PROFILE -->
+	<h3 class="orange">个人信息</h3>
+	<div class="container">
+		<div class="row">
+			<div class="nine columns"><label for="input-name">玩家名</label></div>
+			<div class="three columns"><input id="input-name" type="text" class="fw" maxlength="10"/></div>
+		</div>
+		<div class="row">
+			<div class="nine columns"><label for="input-coins">金币</label></div>
+			<div class="three columns"><input id="input-coins" type="text" class="fw" /></div>
+		</div>
+		<div class="row">
+			<div class="nine columns"><label for="input-streetpass">瞬缘次数</label></div>
+			<div class="three columns"><input id="input-streetpass" type="text" class="fw" /></div>
+		</div>
+		<div class="row">
+			<div class="nine columns"><label for="input-wins">胜利</label></div>
+			<div class="three columns"><input id="input-wins" type="text" class="fw" /></div>
+		</div>
+		<div class="row">
+			<div class="nine columns"><label for="input-loses">失败</label></div>
+			<div class="three columns"><input id="input-loses" type="text" class="fw" /></div>
+		</div>
+		<div class="row">
+			<div class="nine columns"><label for="input-vrpoints">VR</label></div>
+			<div class="three columns"><input id="input-vrpoints" type="text" class="fw" /></div>
+		</div>
+	</div>
+	<!-- PROFILE -->
+	<h3 class="green">解锁</h3>
+	<div class="container">
+		<div class="row">
+			<div class="ten columns"><label for="checkbox-unlock-cups">解锁全部奖杯</label></div>
+			<div class="two columns text-right"><input id="checkbox-unlock-cups" type="checkbox" class="fw" /></div>
+		</div>
+		<div class="row">
+			<div class="ten columns"><label for="checkbox-unlock-characters">解锁全部角色</label></div>
+			<div class="two columns text-right"><input id="checkbox-unlock-characters" type="checkbox" class="fw" /></div>
+		</div>
+		<div class="row">
+			<div class="ten columns"><label for="checkbox-unlock-karts">解锁全部赛车</label></div>
+			<div class="two columns text-right"><input id="checkbox-unlock-karts" type="checkbox" class="fw" /></div>
+		</div>
+		<div class="row">
+			<div class="ten columns"><label for="checkbox-unlock-tires">解锁全部轮胎</label></div>
+			<div class="two columns text-right"><input id="checkbox-unlock-tires" type="checkbox" class="fw" /></div>
+		</div>
+		<div class="row">
+			<div class="ten columns"><label for="checkbox-unlock-gliders">解锁全部滑翔翼</label></div>
+			<div class="two columns text-right"><input id="checkbox-unlock-gliders" type="checkbox" class="fw" /></div>
+		</div>
+	</div>
+
+</div>
+
+</body>
+</html>
